@@ -9,10 +9,10 @@ IrisFramework 已经包含了 jwt 、xorm、mysql、godotenv
 $ git clone https://github.com/nelsonkti/IrisFramework.git
 ```
 
-#initialize
+# initialize
 ```shell script
 $ go get 
 ```
 
-###备注
+### 备注
 > 把 .env.example 改成 .env ;里面配置项目基本信心
