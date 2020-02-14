@@ -63,10 +63,15 @@ func initTable()  {
 }
 
 func defaultConfig()  {
+
 	// 设置日志等级，设置显示sql，设置显示执行时间
-	DB.SetLogLevel(xorm.DEFAULT_LOG_LEVEL)
-	DB.ShowSQL(true)
-	DB.ShowExecTime(true)
+	if os.Getenv("APP_ENV") != "production" {
+		DB.SetLogger(xorm.NewSimpleLogger(logFile()))
+		DB.SetLogLevel(xorm.DEFAULT_LOG_LEVEL)
+		DB.ShowSQL(true)
+		DB.ShowExecTime(true)
+	}
+
 	// 转换大小写
 	DB.SetMapper(core.GonicMapper{})
 }

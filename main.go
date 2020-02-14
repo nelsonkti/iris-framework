@@ -4,9 +4,9 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	_ "IrisFramework/config"
 	"IrisFramework/app/Http/Middleware"
+	"IrisFramework/routes"
 	_ "github.com/joho/godotenv/autoload"
 	"github.com/kataras/iris/v12"
-	"IrisFramework/routes"
 	"os"
 )
 
