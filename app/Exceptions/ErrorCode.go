@@ -3,7 +3,7 @@ package Exceptions
 type ErrorCode struct {
 	Code   int64  `json:"code"`
 	Msg    string `json:"msg"`
-	Detail string `json:"detail"`
+	Error string `json:"error"`
 }
 
 // ErrorInsertDatabase 1-插入数据库失败
@@ -50,6 +50,6 @@ func buildError(code int64, msg string, detail string) ErrorCode {
 	return ErrorCode{
 		Code:   code,
 		Msg:    msg,
-		Detail: detail,
+		Error: detail,
 	}
 }

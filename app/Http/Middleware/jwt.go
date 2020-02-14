@@ -5,7 +5,6 @@ import (
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/context"
 	"github.com/iris-contrib/middleware/jwt"
-	"log"
 	"os"
 	"time"
 )
@@ -14,8 +13,10 @@ var (
 	JWT *jwt.Middleware
 )
 
+/**
+ 初始化 jwt
+ */
 func initJWT()  {
-	log.Print("【jwt】 初始化...\n")
 	JWT = jwt.New(jwt.Config{
 		ErrorHandler: func(ctx context.Context, err error) {
 			if err == nil {

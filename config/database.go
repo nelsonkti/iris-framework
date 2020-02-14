@@ -16,7 +16,6 @@ var once sync.Once
 var DB *xorm.Engine
 
 func init() {
-	fmt.Print("连接数据库......\n")
 	once.Do(func() {
 		dbDriver := os.Getenv("DB_CONNECTION")
 		switch dbDriver {
@@ -53,7 +52,6 @@ func connectMysql() {
 }
 
 func initTable()  {
-	fmt.Print("自动创建表......\n")
 	// 自动创建表
 	err := DB.Sync2(new(Models.User))
 	if err != nil {
