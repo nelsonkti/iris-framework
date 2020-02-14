@@ -44,7 +44,6 @@ func connectMysql() {
 	DB, err = xorm.NewEngine(dbDriver, dbURL)
 
 	if err != nil {
-		fmt.Printf("connection mysql failed, err:%v\n", err)
 		log.Printf("connection mysql failed, err:%v\n", err)
 		panic(err)
 	}
