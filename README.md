@@ -1,4 +1,4 @@
-# IrisFramework
+# iris-framework
 IrisFramework 是根据 laravel 特色 并且是基础go 的 iris 整合出来的基础架构;
 
 IrisFramework 已经包含了 jwt 、xorm、mysql、godotenv
@@ -6,7 +6,7 @@ IrisFramework 已经包含了 jwt 、xorm、mysql、godotenv
 # Installing
 
 ```shell
-$ git clone https://github.com/nelsonkti/IrisFramework.git
+$ git clone https://github.com/nelsonkti/iris-framework.git
 ```
 
 # initialize
