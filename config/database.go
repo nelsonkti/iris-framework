@@ -15,7 +15,7 @@ import (
 var once sync.Once
 var DB *xorm.Engine
 
-func init() {
+func initXorm() {
 	once.Do(func() {
 		dbDriver := os.Getenv("DB_CONNECTION")
 		switch dbDriver {

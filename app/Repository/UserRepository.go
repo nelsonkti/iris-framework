@@ -14,6 +14,7 @@ type UserRepository struct {
 
 func (userService *UserRepository) QueryByUsername(username string) (Models.User, error) {
 	var user = Models.User{
+		ID: 1,
 		Username: username,
 	}
 	has, err := userService.db.Get(&user)
