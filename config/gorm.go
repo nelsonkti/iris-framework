@@ -1,7 +1,6 @@
 package config
 
 import (
-	"IrisFramework/app/Models"
 	"errors"
 	"fmt"
 	"github.com/jinzhu/gorm"
@@ -45,8 +44,8 @@ func initMysql() {
 	// test
 	Gorm = db
 
-	var userModel Models.User
-	Gorm.Where("username like ?","%风%").Find(&userModel)
+	//var userModel Models.User
+	//Gorm.Where("username like ?","%风%").Find(&userModel)
 }
 
 
