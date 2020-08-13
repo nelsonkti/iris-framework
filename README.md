@@ -15,4 +15,4 @@ $ go get
 ```
 
 ### 备注
-> 把 .env.example 改成 .env ;里面配置项目基本信心
+> 把 .env.example 改成 .env ;里面配置项目基本信息
