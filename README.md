@@ -1,18 +1,31 @@
 # iris-framework
-iris-framework 是根据 laravel 特色 并且是基础go 的 iris 整合出来的基础架构;
+[echo-framework](https://github.com/nelsonkti/iris-framework) 是基于 iris 搭建用于快速开发的项目框架
 
-iris-framework 已经包含了 jwt 、xorm、mysql、godotenv、gorm、logrus，日志切割（每天）
-
-# Installing
-
-```shell
-$ git clone https://github.com/nelsonkti/iris-framework.git
+## 安装
+```
+go get -u github.com/nelsonkti/iris-framework
 ```
 
-# initialize
-```shell script
-$ go get 
+运行
+```
+cd iris-framework
+
+go run main.go
 ```
 
-### 备注
-> 把 .env.example 改成 .env ;里面配置项目基本信息
+## 功能叙述
+- 支持 gorm、xorm、logger 日志、jwt 等
+- 日志切割
+- 支持mysql
+
+## 文件夹结构 
+  - app 应用目录，包含了http、模型等
+  - config 项目的应用配置文件
+  - database 数据迁移
+  - public 资源文件（图片、文件等）
+  - routes 路由
+  - storage 缓存和日志文件
+、
+## 环境要求 
+
+- go >= 1.13

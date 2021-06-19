@@ -6,13 +6,12 @@ require (
 	github.com/ajg/form v1.5.1 // indirect
 	github.com/fasthttp-contrib/websocket v0.0.0-20160511215533-1f3b11f56072 // indirect
 	github.com/fastly/go-utils v0.0.0-20180712184237-d95a45783239 // indirect
-	github.com/go-sql-driver/mysql v1.5.0
+	github.com/go-sql-driver/mysql v1.6.0
 	github.com/google/go-querystring v1.0.0 // indirect
 	github.com/imkira/go-interpol v1.1.0 // indirect
 	github.com/iris-contrib/middleware/cors v0.0.0-20191219204441-78279b78a367
 	github.com/iris-contrib/middleware/jwt v0.0.0-20191219204441-78279b78a367
 	github.com/jehiah/go-strftime v0.0.0-20171201141054-1d33003b3869 // indirect
-	github.com/jinzhu/gorm v1.9.15
 	github.com/joho/godotenv v1.3.0
 	github.com/jonboulle/clockwork v0.2.0 // indirect
 	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
@@ -34,6 +33,8 @@ require (
 	github.com/yudai/gojsondiff v1.0.0 // indirect
 	github.com/yudai/golcs v0.0.0-20170316035057-ecda9a501e82 // indirect
 	github.com/yudai/pp v2.0.1+incompatible // indirect
+	gorm.io/driver/mysql v1.1.1
+	gorm.io/gorm v1.21.9
 	xorm.io/core v0.7.3
 	xorm.io/xorm v0.8.1
 )

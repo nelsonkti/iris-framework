@@ -1,11 +1,11 @@
 package main
 
 import (
-	_ "github.com/jinzhu/gorm/dialects/mysql"
-	_ "github.com/go-sql-driver/mysql"
-	_ "IrisFramework/config"
 	"IrisFramework/app/Http/Middleware"
+	_ "IrisFramework/config"
 	"IrisFramework/routes"
+	"fmt"
+	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/joho/godotenv/autoload"
 	"github.com/kataras/iris/v12"
 	"os"
@@ -28,5 +28,7 @@ func newApp() {
 		iris.WithoutServerError(iris.ErrServerClosed),
 		iris.WithOptimizations,
 	)
+
+	fmt.Println("启动成功")
 
 }

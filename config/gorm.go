@@ -3,10 +3,12 @@ package config
 import (
 	"errors"
 	"fmt"
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm"
 	log "github.com/sirupsen/logrus"
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
+	_ "gorm.io/gorm"
 	"os"
+	"time"
 )
 
 type GormLogger struct{}
@@ -31,21 +33,21 @@ func initDB() {
   初始化mysql
  */
 func initMysql() {
-	db, err := gorm.Open("mysql", "homestead:secret@(192.168.10.10:3306)/homestead?charset=utf8&parseTime=True&loc=Local")
+
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?%s", os.Getenv("DB_USERNAME"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_HOST"), os.Getenv("DB_PORT"),os.Getenv("DB_DATABASE"), os.Getenv("DB_PARAMS"))
+
+	db, err := gorm.Open(mysql.Open(dsn))
 	if err != nil {
 		panic("failed to connect database")
 	}
-	defer db.Close()
+	sqlDB, _ := db.DB()
+	defer sqlDB.Close()
 
-	db.SetLogger(&GormLogger{})
-	db.LogMode(true)
-	db.SingularTable(true)
+	sqlDB.SetMaxIdleConns(1024)
+	sqlDB.SetMaxOpenConns(1024)
+	sqlDB.SetConnMaxLifetime(time.Minute * 10)
 
-	// test
 	Gorm = db
-
-	//var userModel Models.User
-	//Gorm.Where("username like ?","%风%").Find(&userModel)
 }
 
 
